@@ -1,9 +1,11 @@
 OS for Android
-* ************************************************************
+
+
+
  * ShareSDKStatistics
  * An open source analytics android sdk for mobile applications
- * ************************************************************
  * 
+ * ************************************************************ * 
  * @version     1.0
  * @author		ShareSDK Limited Liability Company
  * @copyright	Copyright 2014-2016, ShareSDK Limited Liability Company
@@ -12,7 +14,6 @@ OS for Android
  *  
  * *****************************************************
  * This project is available under the following license
- * *****************************************************
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,4 +27,3 @@ OS for Android
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * **************************************************************************
