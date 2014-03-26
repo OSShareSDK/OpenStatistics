@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">Statistics</string>
+    <string name="hello_world">Click Me</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">ShareSDKStatistics</string>
+
+</resources>
