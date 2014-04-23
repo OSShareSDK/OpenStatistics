@@ -1,1 +1,1 @@
-OS for iOS
+OpenStatistics for iOS
