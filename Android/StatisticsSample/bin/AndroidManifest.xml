@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sharesdk.analytics"
+    package="com.sharesdk.example.analytics"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="0.0.1" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -9,6 +9,7 @@
     
     <uses-permission android:name="android.permission.GET_TASKS"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -17,7 +18,8 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:name="com.sharesdk.example.analytics.MyApplication">
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
@@ -30,11 +32,29 @@
         
         <activity android:name=".TestActivity1"  android:label="@string/title_activity_main" />
         <activity android:name=".TestActivity2"  android:label="@string/title_activity_main" />
+        <activity android:name=".WebviewAnalytic" />
+        <activity android:name=".FragmentStack" />
+        <activity android:name=".FragmentTabs" />
         
-        <meta-data android:name="SHARESDK_APPKEY" android:value="b5558eab134cf306fdcdc3a6746afa25"/>
-        <meta-data android:name="SHARESDK_CHANNEL" android:value="SHARESDK_CHANNEL_A"/>
+        <!-- 添加 APPKEY 和 渠道号  -->
+        <meta-data android:name="SHARESDK_APPKEY" android:value="791d0156bde476046689babe481916e9"/>
+        <meta-data android:name="SHARESDK_CHANNEL" android:value="SHARESDK_CHANNEL_B"/>
         
+       	<!-- service用于保证一定能够向服务器上传数据 -->
+        <service 
+            android:name="cn.sharesdk.open.statistics.server.RemoteService"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="cn.sharesdk.open.statistics.server.AIDLService"/>
+            </intent-filter>
+        </service>
         
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+          
     </application>
 
 </manifest>
